@@ -287,6 +287,16 @@ conf_DATA += conf/janus.plugin.videoroom.cfg.sample
 EXTRA_DIST += conf/janus.plugin.videoroom.cfg.sample
 endif
 
+if ENABLE_PLUGIN_VIDEOROOM2
+plugin_LTLIBRARIES += plugins/libjanus_videoroom2.la
+plugins_libjanus_videoroom2_la_SOURCES = plugins/janus_videoroom2.c
+plugins_libjanus_videoroom2_la_CFLAGS = $(plugins_cflags)
+plugins_libjanus_videoroom2_la_LDFLAGS = $(plugins_ldflags)
+plugins_libjanus_videoroom2_la_LIBADD = $(plugins_libadd)
+conf_DATA += conf/janus.plugin.videoroom2.cfg.sample
+EXTRA_DIST += conf/janus.plugin.videoroom2.cfg.sample
+endif
+
 if ENABLE_PLUGIN_VOICEMAIL
 plugin_LTLIBRARIES += plugins/libjanus_voicemail.la
 plugins_libjanus_voicemail_la_SOURCES = plugins/janus_voicemail.c

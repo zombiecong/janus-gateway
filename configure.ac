@@ -324,6 +324,12 @@ AC_ARG_ENABLE([plugin-videoroom],
               [],
               [enable_plugin_videoroom=yes])
 
+AC_ARG_ENABLE([plugin-videoroom2],
+              [AS_HELP_STRING([--disable-plugin-videoroom2],
+                              [Disable videoroom2 plugin])],
+              [],
+              [enable_plugin_videoroom2=yes])
+
 AC_ARG_ENABLE([plugin-voicemail],
               [AS_HELP_STRING([--disable-plugin-voicemail],
                               [Disable voicemail plugin])],
@@ -353,6 +359,7 @@ AM_CONDITIONAL([ENABLE_PLUGIN_SIP], [test "x$enable_plugin_sip" = "xyes"])
 AM_CONDITIONAL([ENABLE_PLUGIN_STREAMING], [test "x$enable_plugin_streaming" = "xyes"])
 AM_CONDITIONAL([ENABLE_PLUGIN_VIDEOCALL], [test "x$enable_plugin_videocall" = "xyes"])
 AM_CONDITIONAL([ENABLE_PLUGIN_VIDEOROOM], [test "x$enable_plugin_videoroom" = "xyes"])
+AM_CONDITIONAL([ENABLE_PLUGIN_VIDEOROOM2], [test "x$enable_plugin_videoroom2" = "xyes"])
 AM_CONDITIONAL([ENABLE_PLUGIN_VOICEMAIL], [test "x$enable_plugin_voicemail" = "xyes"])
 
 ##
@@ -445,6 +452,9 @@ AM_COND_IF([ENABLE_PLUGIN_AUDIOBRIDGE],
 AM_COND_IF([ENABLE_PLUGIN_VIDEOROOM],
 	[echo "    Video Room:            yes"],
 	[echo "    Video Room:            no"])
+AM_COND_IF([ENABLE_PLUGIN_VIDEOROOM2],
+    [echo "    Video Room:            yes"],
+    [echo "    Video Room:            no"])
 AM_COND_IF([ENABLE_PLUGIN_VOICEMAIL],
 	[echo "    Voice Mail:            yes"],
 	[echo "    Voice Mail:            no"])

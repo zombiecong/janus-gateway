@@ -45,3 +45,5 @@ Makefile.in
 
 .deps
 .dirstamp
+.idea
+.DS_Store
